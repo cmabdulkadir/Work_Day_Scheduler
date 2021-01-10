@@ -156,3 +156,14 @@ function setCSS() {
     }
 }
 setCSS()
+
+// Storing to local storage
+
+$(".saveBtn").on("click",function(){
+    var key = $(this).parent().data("time")
+    var value = $(this).parent().siblings(".form-control").val()
+    localStorage.setItem(key, value)
+    console.log(value)
+})
+
+// 
