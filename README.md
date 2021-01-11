@@ -1,7 +1,21 @@
-# Work_Day_Scheduler
+# Workday Scheduler
 
-In this application I created a calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery. I used
+## Purpose
 
+Workday Scheduler is an application that allows a user to save events for each hour of the day. This app runs in the browser and dynamically updates HTML and CSS powered by jQuery.
 
+![Workday Scheduler](./Assets/Workday-Scheduler.png)
 
-You'll need to use a library like [Moment.js](https://momentjs.com/) to work with dates and times. `Moment.js` has historically been the most popular date/time library but is no longer supported by its developers. However, you can still use it for this project, or you can look into one of the following alternatives:
+## Tech Stack
+
+Workday Scheduler is built on the following:
+
+- HTML
+- CSS
+- JavaScript
+- jQuery
+- [Moment.js](https://momentjs.com/)
+
+## Development
+
+Pull this repo and run this code in the browser

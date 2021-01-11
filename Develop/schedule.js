@@ -48,13 +48,13 @@ function setCSS() {
     hourone = moment().startOf('day').add(9, "hours")
 
     if (currentTime.isAfter(hourone)) {
-        $("#form-one").addClass("past")
+        $("#form-9").addClass("past")
     }
     else if (currentTime.isBefore(hourone)) {
-        $("#form-one").addClass("future")
+        $("#form-9").addClass("future")
     }
     else if (currentTime.isSame(hourone)) {
-        $("#form-one").addClass("present")
+        $("#form-9").addClass("present")
     }
 
 
@@ -62,108 +62,115 @@ function setCSS() {
     hourtwo = moment().startOf('day').add(10, "hours")
 
     if (currentTime.isAfter(hourtwo)) {
-        $("#form-two").addClass("past")
+        $("#form-10").addClass("past")
     }
     else if (currentTime.isBefore(hourtwo)) {
-        $("#form-two").addClass("future")
+        $("#form-10").addClass("future")
     }
     else if (currentTime.isSame(hourtwo)) {
-        $("#form-two").addClass("present")
+        $("#form-10").addClass("present")
     }
 
     hourthree = moment().startOf('day').add(11, "hours")
 
     if (currentTime.isAfter(hourthree)) {
-        $("#form-three").addClass("past")
+        $("#form-11").addClass("past")
     }
     else if (currentTime.isBefore(hourthree)) {
-        $("#form-three").addClass("future")
+        $("#form-11").addClass("future")
     }
     else if (currentTime.isSame(hourthree)) {
-        $("#form-three").addClass("present")
+        $("#form-11").addClass("present")
     }
 
     hourfour = moment().startOf('day').add(12, "hours")
 
     if (currentTime.isAfter(hourfour)) {
-        $("#form-four").addClass("past")
+        $("#form-12").addClass("past")
     }
     else if (currentTime.isBefore(hourfour)) {
-        $("#form-four").addClass("future")
+        $("#form-12").addClass("future")
     }
     else if (currentTime.isSame(hourfour)) {
-        $("#form-four").addClass("present")
-    }  
+        $("#form-12").addClass("present")
+    }
 
     hourfive = moment().startOf('day').add(13, "hours")
 
     if (currentTime.isAfter(hourfive)) {
-        $("#form-five").addClass("past")
+        $("#form-1").addClass("past")
     }
     else if (currentTime.isBefore(hourfive)) {
-        $("#form-five").addClass("future")
+        $("#form-1").addClass("future")
     }
     else if (currentTime.isSame(hourfive)) {
-        $("#form-five").addClass("present")
+        $("#form-1").addClass("present")
     }
 
     hoursix = moment().startOf('day').add(14, "hours")
 
     if (currentTime.isAfter(hoursix)) {
-        $("#form-six").addClass("past")
+        $("#form-2").addClass("past")
     }
     else if (currentTime.isBefore(hoursix)) {
-        $("#form-six").addClass("future")
+        $("#form-2").addClass("future")
     }
     else if (currentTime.isSame(hoursix)) {
-        $("#form-six").addClass("present")
+        $("#form-2").addClass("present")
     }
 
     hourseven = moment().startOf('day').add(15, "hours")
 
     if (currentTime.isAfter(hourseven)) {
-        $("#form-seven").addClass("past")
+        $("#form-3").addClass("past")
     }
     else if (currentTime.isBefore(hourseven)) {
-        $("#form-seven").addClass("future")
+        $("#form-3").addClass("future")
     }
     else if (currentTime.isSame(hourseven)) {
-        $("#form-seven").addClass("present")
+        $("#form-3").addClass("present")
     }
 
     houreight = moment().startOf('day').add(16, "hours")
 
     if (currentTime.isAfter(houreight)) {
-        $("#form-eight").addClass("past")
+        $("#form-4").addClass("past")
     }
     else if (currentTime.isBefore(houreight)) {
-        $("#form-eight").addClass("future")
+        $("#form-4").addClass("future")
     }
     else if (currentTime.isSame(houreight)) {
-        $("#form-eight").addClass("present")
+        $("#form-4").addClass("present")
     }
 
     hournine = moment().startOf('day').add(17, "hours")
 
     if (currentTime.isAfter(hournine)) {
-        $("#form-nine").addClass("past")
+        $("#form-5").addClass("past")
     }
     else if (currentTime.isBefore(hournine)) {
-        $("#form-nine").addClass("future")
+        $("#form-5").addClass("future")
     }
     else if (currentTime.isSame(hournine)) {
-        $("#form-nine").addClass("present")
+        $("#form-5").addClass("present")
     }
 }
 setCSS()
 
 // Storing to local storage
 
-$(".saveBtn").on("click",function(){
+$(".saveBtn").on("click", function () {
     var key = $(this).parent().data("time")
     var value = $(this).parent().siblings(".form-control").val()
     localStorage.setItem(key, value)
     console.log(value)
 })
 
-// 
+// Now render from local storage
+
+var hours = [9, 10, 11, 12, 1, 2, 3, 4, 5]
+
+for (let i = 0; i < hours.length; i++) {
+    var data = localStorage.getItem(hours[i])
+    $("#form-" + hours[i]).val(data)
+}
